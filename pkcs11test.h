@@ -112,7 +112,7 @@ class SessionTest : public PKCS11Test {
     }
   }
   void Login(CK_USER_TYPE user_type, const char* pin) {
-    CK_RV rv = g_fns->C_Login(session_, user_type, (CK_UTF8CHAR_PTR)pin, strlen(pin));
+    CK_RV rv = g_fns->C_Login(session_, user_type, (CK_UTF8CHAR_PTR)pin, (CK_ULONG)strlen(pin));
     if (rv != CKR_OK) {
       std::cerr << "Failed to login as user type " << user_type_name(user_type) << ", error " << rv_name(rv) << std::endl;
     }

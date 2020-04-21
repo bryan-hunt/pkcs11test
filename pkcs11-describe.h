@@ -23,7 +23,7 @@ namespace pkcs11 {
 
 std::string hex_data(const CK_BYTE_PTR p, int len);
 inline std::string hex_data(std::string s) {
-  return hex_data((CK_BYTE_PTR)(s.data()), s.length());
+  return hex_data((CK_BYTE_PTR)(s.data()), (CK_ULONG)s.length());
 }
 std::string hex_decode(std::string hex_value);
 std::string rv_name(CK_RV val);

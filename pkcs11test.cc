@@ -14,7 +14,11 @@
 
 // C headers
 #include <dlfcn.h>
+#ifdef WIN32
+#include "getopt.h"
+#else
 #include <unistd.h>
+#endif
 
 // C++ headers
 #include <cctype>
